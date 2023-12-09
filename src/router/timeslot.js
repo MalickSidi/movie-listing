@@ -1,17 +1,16 @@
-const { getAllMovies, getMovieById, createMovie } = require('../controllers/movie');
 
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    return getAllMovies(req, res);
+    return getAllTimeslots(req, res);
 })
 
 router.get('/:id', (req, res) => {
-    return getMovieById(req, res);
+    return getTimeslotById(req, res);
 })
 
 router.post('/', (req, res) => {
-    return createMovie(req, res)
+    return createTimeslot(req, res)
 })
 
 router.put('/:id', (req, res) => {

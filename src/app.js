@@ -1,9 +1,10 @@
 const express = require('express')
-const moviesRouter = require('./router/movies')
+
+const movies = require('./router/movies')
 
 const app = express()
 
 app.use(express.json())
-app.use('/api/v1', moviesRouter)
+app.use('/api/v1/movies', movies)
 
 module.exports = app

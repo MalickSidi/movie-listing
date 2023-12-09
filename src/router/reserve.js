@@ -1,4 +1,3 @@
-const { getAllMovies, getMovieById, createMovie } = require('../controllers/movie');
 
 const router = require('express').Router();
 
