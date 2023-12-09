@@ -1,4 +1,4 @@
-const { getAllMovies, getMovieById, createMovie } = require('../controllers/movie');
+const { getAllMovies, getMovieById, createMovie, updateMovie, deleteMovie } = require('../controllers/movie');
 
 const router = require('express').Router();
 
@@ -15,11 +15,11 @@ router.post('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    
+    return updateMovie(req,res)
 })
 
 router.delete('/:id', (req, res) => {
-    
+    return deleteMovie
 })
 
 module.exports = router

@@ -1,12 +1,11 @@
 const mongoose = require('mongoose')
-const Movie = require('./Movie')
-const Timeslot = require('./timeslot')
 
 const reservationScheme = new mongoose.Schema({
-    movie: Movie,
-    timeslot: Timeslot
+    movie: String,
+    timeslot: String,
+    spots: Number
 })
 
-const Reservation = mongoose.Model(reservationScheme)
+const Reservation = mongoose.model('Reservation', reservationScheme)
 
 module.exports = Reservation

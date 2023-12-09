@@ -12,9 +12,17 @@ npm i
 ```bash
 DB_URI=mongodb://databaseconnection_uri
 ```
-3. Connect to the API using the default port: `http://localhost:8800/` 
+4. Run the system using commands:
+```bash
+## Live reload
+npm run dev
 
-If you want to connect to different PORT You can add `PORT` variable to the `.env` file.
+## or Start application
+npm run dev
+```
+5. Connect to the API using the default port: `http://localhost:8800/` 
+
+If you want to connect to a different `PORT` You can customize the `PORT` variable in the `.env` file.
 
 ## API endpints
 ### Movie
@@ -36,7 +44,7 @@ POST http://localhost:8800/api/v1/movies
 ```
 __Body required field__: `name`
 
-Using `HTTP POST` method you can create new Movie. Movie name is required.
+Using `HTTP POST` method you can create new Movie. _Movie name is required_.
 
 #### 4. Update Movie
 ```http
@@ -71,23 +79,27 @@ Use `HTTP GET` method to find spicific timeslot using the `{id}`.
 ```http
 POST http://localhost:8800/api/v1/timeslots 
 ```
-__Body required field__: `name`
+__Body required field__: 
 
-Using `HTTP POST` method you can create new Timeslot. Timeslot name is required.
+1. `name`
+2. `date`
+3. `capacity`
+
+Using `HTTP POST` method you can create new Timeslot. _Timeslot name is required_.
 
 #### 4. Update Timeslots
 ```http
 PUT http://localhost:8800/api/v1/timeslots/{id}
 ```
 
-Using `HTTP PUT` method you can update Timeslot. Timeslots `ID` is required.
+Using `HTTP PUT` method you can update Timeslot. _Timeslots `ID` is required_.
 
 #### 5. Delete Timeslot
 ```http
 DELETE http://localhost:8800/api/v1/timeslots/{id}
 ```
 
-Using `HTTP DELETE` method you can Delete Timeslot. Timeslot `ID` is required.
+Using `HTTP DELETE` method you can Delete Timeslot. _Timeslot `ID` is required_.
 
 ---
 
@@ -108,20 +120,16 @@ Use `HTTP GET` method to find spicific Reservations using the `{id}`.
 ```http
 POST http://localhost:8800/api/v1/reservations 
 ```
-__Body required field__: `Movie`, `Timeslot`
+__Body required field__: 
+
+1. `movie_id` 
+2. `timeslot_id`
 
 Using `HTTP POST` method you can create new Reservations.
 
-#### 4. Update Reservations
-```http
-PUT http://localhost:8800/api/v1/reservations/{id}
-```
-
-Using `HTTP PUT` method you can update Reservations. Reservations `ID` is required.
-
-#### 5. Delete Reservations
+#### 4. Delete Reservations
 ```http
 DELETE http://localhost:8800/api/v1/reservations/{id}
 ```
 
-Using `HTTP DELETE` method you can Delete Reservations. Reservations `ID` is required.
+Using `HTTP DELETE` method you can Delete Reservations. _Reservations `ID` is required_.
